@@ -26,9 +26,10 @@ class Question:
         for question_data in questions_data:
             question = cls.__create_question_from_dictionary(question_data)
 
-            if cls.__question_is_valid(question):
-                questions.append(question)
+            if not cls.__question_is_valid(question):
+                print("Invalid question: {}".format(question))
 
+            questions.append(question)
         return questions
 
     @classmethod
@@ -37,8 +38,8 @@ class Question:
                 and question.difficulty != DIFFICULTY_EMPTY
                 and question.text is not None
                 and question.type != TYPE_EMPTY
-                and question.wrong_answers
-                and question.correct_answers)
+                and question.wrong_answers and len(question.wrong_answers) >= 1
+                and question.correct_answers and len(question.correct_answers) >= 1)
 
     @classmethod
     def __create_question_from_dictionary(cls, question_data: dict[str, str]) -> Question:
@@ -50,6 +51,6 @@ class Question:
             Answer.create_answers(cls.__get_from_tag(question_data, wrong_answers_tag)),
             Answer.create_answers(cls.__get_from_tag(question_data, correct_answers_tag)))
 
-    @classmethod
-    def __get_from_tag(cls, question_data: dict[str, str], tag: str) -> str:
+    @staticmethod
+    def __get_from_tag(question_data: dict[str, str], tag: str) -> str:
         return question_data[tag] if tag in question_data else None

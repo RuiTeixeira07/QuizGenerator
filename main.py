@@ -1,7 +1,7 @@
 from file import File
-from question import Question
+from model.question import Question
 
-questions_data_path = 'assets/questionsData.csv'
+questions_data_path = 'assets/QuestionsData.csv'
 
 class Main:
     @staticmethod
