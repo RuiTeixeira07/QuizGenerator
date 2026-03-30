@@ -1,7 +1,7 @@
 from dataclasses import dataclass
-from model.answer import Answer
-from model.difficulty import Difficulty, EMPTY as DIFFICULTY_EMPTY
-from model.type import Type, EMPTY as TYPE_EMPTY
+from QuizGenerator.model.answer import Answer
+from QuizGenerator.model.difficulty import Difficulty, EMPTY as DIFFICULTY_EMPTY
+from QuizGenerator.model.type import Type, EMPTY as TYPE_EMPTY
 
 id_tag = "ID"
 difficulty_tag = "Difficulty"

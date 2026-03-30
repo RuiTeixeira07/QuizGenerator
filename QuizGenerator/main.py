@@ -1,7 +1,7 @@
-from file import File
-from model.question import Question
+from QuizGenerator.file import File
+from QuizGenerator.model.question import Question
 
-questions_data_path = 'assets/QuestionsData.csv'
+questions_data_path = '../assets/QuestionsData.csv'
 
 class Main:
     @staticmethod
