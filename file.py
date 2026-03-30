@@ -13,5 +13,5 @@ class File:
                 return list(reader)
 
         except FileNotFoundError:
-            print("File not found: {}".format(self.file_path))
+            print("File Not Found: {}".format(self.file_path))
             return []

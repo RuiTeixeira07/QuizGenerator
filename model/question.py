@@ -27,7 +27,7 @@ class Question:
             question = cls.__create_question_from_dictionary(question_data)
 
             if not cls.__question_is_valid(question):
-                print("Invalid question: {}".format(question))
+                print("Invalid Question: {}".format(question))
 
             questions.append(question)
         return questions
