@@ -1,31 +1,31 @@
 ID;Difficulty;Question;Question Type;Wrong Answers;Correct Answers
-1;Easy;Que linguagem de programação precedeu Python?;Multiple Choice;C,C++,Java;ABC
+1;Easy;Que linguagem de programação precedeu Python?;Multiple Choice;C|C++|Java;ABC
 2;Easy;Python é uma linguagem de programação dinâmica.;True or False;FALSE;TRUE
-3;Easy;Que símbolos são utilizados para escrever um comentário?;Multiple Choice;//,**,/* */;#
-4;Easy;Os seguintes são modificadores de acesso:;True or False;public,private,protected;Nenhuma das opções
-5;Easy;Que função é utilizada para escrever uma mensagem?;Multiple Choice;display(),printf(),show();print()
-6;Easy;Que símbolo é utilizado para elevar um número?;Multiple Choice;#,*,^;**
+3;Easy;Que símbolos são utilizados para escrever um comentário?;Multiple Choice;//|**|/* */;#
+4;Easy;Os seguintes são modificadores de acesso:;True or False;public|private|protected;Nenhuma das opções
+5;Easy;Que função é utilizada para escrever uma mensagem?;Multiple Choice;display()|printf()|show();print()
+6;Easy;Que símbolo é utilizado para elevar um número?;Multiple Choice;#|*|^;**
 7;Easy;Qual o resultado da seguinte instrução? print(3 < 5 < 10);True or False;FALSE;TRUE
 8;Easy;Qual o resultado da seguinte instrução? print(not 7 < 20 < 21);True or False;TRUE;FALSE
 9;Easy;O seguinte é possível em Python: print([7, "String", 21.0, True]);True or False;FALSE;TRUE
-10;Easy;Que palavra-chave define uma função?;Multiple Choice;define,func,function;def
+10;Easy;Que palavra-chave define uma função?;Multiple Choice;define|func|function;def
 11;Intermediate;Qual o resultado da seguinte instrução? print(10 > 5 <= 9);True or False;FALSE;TRUE
-12;Intermediate;Que símbolo é utilizado na divisão inteira?;Multiple Choice;#,**,%;//
-13;Intermediate;Qual das instruções é utilizada para interromper um ciclo?;Multiple Choice;exit,stop,end;break
-14;Intermediate;Qual das seguintes capta uma exceção?;Multiple Choice;catch,check,try;except
-15;Intermediate;Qual o resultado da seguinte instrução? print(len([]));Multiple Choice;IndexError,KeyError,MemoryError;0
-16;Intermediate;Qual o resultado da seguinte instrução? print(len([7, "String", 21.0, True]));Multiple Choice;2,28,Error;4
-17;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... a.append(7) ... print(a);Multiple Choice;[7, 1, 2, 3],[8, 2, 3],[1, 2, 10];[1, 2, 3, 7]
-18;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... a.append(7, 9) ... print(a);Multiple Choice;[7, 9, 1, 2, 3],[17, 2, 3],[1, 2, 3, 7, 9];Error
-19;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... a.extend([7, 9]) ... print(a);Multiple Choice;[7, 9, 1, 2, 3], [17, 2, 3], Error;[1, 2, 3, 7, 9]
-20;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... print([n**3 + 1 for n in a]);Multiple Choice;IndexError,[4/3, 5/3, 2],[4, 7, 10];[2, 9, 28]
+12;Intermediate;Que símbolo é utilizado na divisão inteira?;Multiple Choice;#|**|%;//
+13;Intermediate;Qual das instruções é utilizada para interromper um ciclo?;Multiple Choice;exit|stop|end;break
+14;Intermediate;Qual das seguintes capta uma exceção?;Multiple Choice;catch|check|try;except
+15;Intermediate;Qual o resultado da seguinte instrução? print(len([]));Multiple Choice;IndexError|KeyError|MemoryError;0
+16;Intermediate;Qual o resultado da seguinte instrução? print(len([7, "String", 21.0, True]));Multiple Choice;2|28|Error;4
+17;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... a.append(7) ... print(a);Multiple Choice;[7, 1, 2, 3]|[8, 2, 3]|[1, 2, 10];[1, 2, 3, 7]
+18;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... a.append(7, 9) ... print(a);Multiple Choice;[7, 9, 1, 2, 3]|[17, 2, 3]|[1, 2, 3, 7, 9];Error
+19;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... a.extend([7, 9]) ... print(a);Multiple Choice;[7, 9, 1, 2, 3]|[17, 2, 3]|Error;[1, 2, 3, 7, 9]
+20;Intermediate;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... print([n**3 + 1 for n in a]);Multiple Choice;IndexError|[4/3, 5/3, 2]|[4, 7, 10];[2, 9, 28]
 21;Hard;Qual o resultado da seguinte instrução? print([1, 2, 3] is [1, 2, 3]);True or False;TRUE;FALSE
-22;Hard;Qual o resultado da seguinte instrução? print([x for x in range(12) if x % 2 == 0]);Multiple Choice;KeyError,[0, 2, 4, 6, 8, 10, 12],[2, 4, 6, 8, 10, 12];[0, 2, 4, 6, 8, 10]
-23;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a ... b[-1] = 7 ... print(a);Multiple Choice;IndexError,[7, 1, 2, 3],[1, 7, 3];[1, 2, 7]
-24;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a[:] ... b[-3] = 7 ... print(a);Multiple Choice;IndexError,[1, 2, 7],[7, 2, 3];[1, 2, 3]
-25;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a ... a += [7, 9] ... print(b);Multiple Choice;[1, 2, 3],[8, 11, 3],[7, 9, 1, 2, 3];[1, 2, 3, 7, 9]
-26;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a ... a = a + [7, 9] ... print(b);Multiple Choice;[1, 2, 3, 7, 9],[1, 2, 3],[8, 11, 3];[1, 2, 3]
-27;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 4, 3, 5, 10] ... a[1:3] = [7, 9] ... print(a);Multiple Choice;[7, 9, 3, 5, 10],[7, 4, 9, 5, 10],[1, 7, 3, 9,10];[1, 7, 9, 5, 10]
-28;Hard;Qual o retultado da seguinte instrução? print({"brand": "Ford", "model": "Mustang", "year": 1964, "year": 2020});Multiple Choice;Exception,KeyError,{"brand": "Ford", "model": "Mustang", "year": 1964};{"brand": "Ford", "model": "Mustang", "year": 2020}
-29;Hard;Qual o resultado do seguinte conjunto de instruções? ... names = ["John", "Jane"] ... ages = [7, 14] ... print([x for x in zip(names, ages)]);Multiple Choice;["John", "Jane", 7, 14],["John", 7, "Jane", 14],{"John": 7, "Jane": 14};[("John", 7), ("Jane", 14)]
-30;Hard;Qual o resultado do seguinte conjunto de instruções? ... class Person: ... def __init__(self, name, age = 7): ... self.name = name ... self.age = age ... p1 = Person("John", 14) ... p2 = p1 ... p1.age = 21 ... print(p2.name, p2.age);Multiple Choice;John 7,John 14,"John": 14;John 21
+22;Hard;Qual o resultado da seguinte instrução? print([x for x in range(12) if x % 2 == 0]);Multiple Choice;KeyError|[0, 2, 4, 6, 8, 10, 12]|[2, 4, 6, 8, 10, 12];[0, 2, 4, 6, 8, 10]
+23;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a ... b[-1] = 7 ... print(a);Multiple Choice;IndexError|[7, 1, 2, 3]|[1, 7, 3];[1, 2, 7]
+24;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a[:] ... b[-3] = 7 ... print(a);Multiple Choice;IndexError|[1, 2, 7]|[7, 2, 3];[1, 2, 3]
+25;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a ... a += [7, 9] ... print(b);Multiple Choice;[1, 2, 3]|[8, 11, 3]|[7, 9, 1, 2, 3];[1, 2, 3, 7, 9]
+26;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 2, 3] ... b = a ... a = a + [7, 9] ... print(b);Multiple Choice;[1, 2, 3, 7, 9]|[1, 2, 3]|[8, 11, 3];[1, 2, 3]
+27;Hard;Qual o resultado do seguinte conjunto de instruções? ... a = [1, 4, 3, 5, 10] ... a[1:3] = [7, 9] ... print(a);Multiple Choice;[7, 9, 3, 5, 10]|[7, 4, 9, 5, 10]|[1, 7, 3, 9, 10];[1, 7, 9, 5, 10]
+28;Hard;Qual o retultado da seguinte instrução? print({"brand": "Ford", "model": "Mustang", "year": 1964, "year": 2020});Multiple Choice;Exception|KeyError|{"brand": "Ford", "model": "Mustang", "year": 1964}";{"brand": "Ford", "model": "Mustang", "year": 2020}
+29;Hard;Qual o resultado do seguinte conjunto de instruções? ... names = ["John", "Jane"] ... ages = [7, 14] ... print([x for x in zip(names, ages)]);Multiple Choice;["John", "Jane", 7, 14]|["John", 7, "Jane", 14]|{"John": 7, "Jane": 14};[("John", 7), ("Jane", 14)]
+30;Hard;Qual o resultado do seguinte conjunto de instruções? ... class Person: ... def __init__(self, name, age = 7): ... self.name = name ... self.age = age ... p1 = Person("John", 14) ... p2 = p1 ... p1.age = 21 ... print(p2.name, p2.age);Multiple Choice;John 7|John 14|"John": 14;John 21
