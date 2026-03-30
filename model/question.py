@@ -28,6 +28,7 @@ class Question:
 
             if not cls.__question_is_valid(question):
                 print("Invalid Question: {}".format(question))
+                continue
 
             questions.append(question)
         return questions
