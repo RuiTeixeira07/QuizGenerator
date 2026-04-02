@@ -1,6 +1,9 @@
+from QuizGenerator.model.difficulty import ALL as DIFFICULTY_ALL
+from collections import defaultdict
 from xml.etree import ElementTree as ET
 from QuizGenerator.generator.extensions.extensions import GeneratorExtensions
 from QuizGenerator.generator.format.format import Format
+from QuizGenerator.model.difficulty import Difficulty
 from QuizGenerator.model.question import Question
 from QuizGenerator.model.type import Type
 
@@ -8,6 +11,7 @@ write_bytes_mode = "wb"
 default_encoding = "utf-8"
 
 root_tag = "quiz"
+difficulty_tag = "category"
 question_tag = "question"
 
 class Generator:
@@ -22,12 +26,35 @@ class Generator:
     def __create_element_tree(questions: list[Question]) -> ET.Element[str]:
         root = ET.Element(root_tag)
 
-        for question in questions:
-            Generator.__create_question_tag(root, question)
+        questions_by_difficulty = Generator.__group_questions_by_difficulty(questions)
+
+        for difficulty in DIFFICULTY_ALL:
+            if difficulty in questions_by_difficulty:
+                Generator.__create_difficulty_tag(root, difficulty)
+
+                for question in questions_by_difficulty[difficulty]:
+                    Generator.__create_question_tag(root, question)
 
         Format.indent_element_tree(root)
 
         return root
+
+    @staticmethod
+    def __group_questions_by_difficulty(questions: list[Question]) -> defaultdict[Difficulty, list[Question]]:
+        questions_by_difficulty = defaultdict(list)
+        for question in questions:
+            questions_by_difficulty[question.difficulty].append(question)
+
+        return questions_by_difficulty
+
+    @staticmethod
+    def __create_difficulty_tag(root: ET.Element[str], difficulty: Difficulty) -> None:
+        question_element = ET.SubElement(root, question_tag, type=difficulty_tag)
+
+        GeneratorExtensions.create_element_containing_text_element(
+            question_element,
+            difficulty_tag,
+            f"$course$/{difficulty.value}")
 
     @staticmethod
     def __create_question_tag(root: ET.Element[str], question: Question) -> None:
