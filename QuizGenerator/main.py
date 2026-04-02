@@ -5,7 +5,7 @@ questions_data_path = 'assets/QuestionsData.csv'
 
 class Main:
     @staticmethod
-    def run():
+    def run() -> None:
         questions_data = File(questions_data_path).read_file()
         questions = Question.create_questions(questions_data)
 
