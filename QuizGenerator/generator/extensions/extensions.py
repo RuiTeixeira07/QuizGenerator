@@ -36,7 +36,7 @@ class GeneratorExtensions:
         GeneratorExtensions.create_element_containing_text_element(
             question_element,
             question_text_tag,
-            Format.format_text(question.text))
+            Format.format_text_to_display(question.text))
 
         ET.SubElement(question_element, shuffle_answers_tag).text = shuffle_answers_active_tag
 

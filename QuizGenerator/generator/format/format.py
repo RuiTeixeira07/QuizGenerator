@@ -12,7 +12,7 @@ class Format:
         ET.indent(root, space=indent_size)
 
     @staticmethod
-    def format_text(text: str) -> str:
+    def format_text_to_display(text: str) -> str:
         formatted_text_list = text.split(paragraph_placeholder)
 
         formatted_text = formatted_text_list[0]
