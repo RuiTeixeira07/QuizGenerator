@@ -2,7 +2,7 @@ ID;Difficulty;Question;Question Type;Wrong Answers;Correct Answers
 1;Easy;Que linguagem de programação precedeu Python?;Multiple Choice;C|C++|Java;ABC
 2;Easy;Python é uma linguagem de programação dinâmica.;True or False;FALSE;TRUE
 3;Easy;Que símbolos são utilizados para escrever um comentário?;Multiple Choice;//|**|/* */;#
-4;Easy;Os seguintes são modificadores de acesso:;True or False;public|private|protected;Nenhuma das opções
+4;Easy;Os seguintes são modificadores de acesso:;Multiple Choice;public|private|protected;Nenhuma das opções
 5;Easy;Que função é utilizada para escrever uma mensagem?;Multiple Choice;display()|printf()|show();print()
 6;Easy;Que símbolo é utilizado para elevar um número?;Multiple Choice;#|*|^;**
 7;Easy;Qual o resultado da seguinte instrução? print(3 < 5 < 10);True or False;FALSE;TRUE
