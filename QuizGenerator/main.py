@@ -1,5 +1,5 @@
 from QuizGenerator.file import File
-from QuizGenerator.generator import Generator
+from QuizGenerator.generator.generator import Generator
 from QuizGenerator.model.question import Question
 
 questions_data_path = 'assets/QuestionsData.csv'
