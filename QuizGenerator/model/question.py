@@ -19,14 +19,14 @@ class Question:
     wrong_answers: list[Answer]
     correct_answers: list[Answer]
 
-    @classmethod
-    def create_questions(cls: Question, questions_data: list[dict[str, str]]) -> list[Question]:
+    @staticmethod
+    def create_questions(questions_data: list[dict[str, str]]) -> list[Question]:
         questions = []
 
         for question_data in questions_data:
-            question = cls.__create_question_from_dictionary(question_data)
+            question = Question.__create_question_from_dictionary(question_data)
 
-            if not cls.__question_is_valid(question):
+            if not Question.__question_is_valid(question):
                 print("Invalid Question: {}".format(question))
                 continue
 
