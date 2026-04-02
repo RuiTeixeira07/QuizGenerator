@@ -3,7 +3,6 @@ from QuizGenerator.generator.format.format import Format
 from QuizGenerator.model.question import Question
 from QuizGenerator.model.type import Type, MULTIPLE_CHOICE, TRUE_OR_FALSE
 
-indent_size = 4 * " "
 write_bytes_mode = "wb"
 default_encoding = "utf-8"
 
@@ -36,12 +35,9 @@ class Generator:
         for question in questions:
             Generator.__create_question_tag(root, question)
 
-        Generator.__indent_element_tree(root)
+        Format.indent_element_tree(root)
 
         return root
-
-    @staticmethod
-    def __indent_element_tree(root: ET.Element[str]) -> None: ET.indent(root, space=indent_size)
 
     @staticmethod
     def __create_question_tag(root: ET.Element[str], question: Question) -> None:

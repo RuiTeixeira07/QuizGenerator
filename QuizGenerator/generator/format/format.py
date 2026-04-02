@@ -1,9 +1,16 @@
+from xml.etree import ElementTree as ET
+
+indent_size = 4 * " "
 
 paragraph_placeholder = " ... "
 open_paragraph_tag = "<p>"
 close_paragraph_tag = "</p>"
 
 class Format:
+    @staticmethod
+    def indent_element_tree(root: ET.Element[str]) -> None:
+        ET.indent(root, space=indent_size)
+
     @staticmethod
     def format_text(text: str) -> str:
         formatted_text_list = text.split(paragraph_placeholder)
