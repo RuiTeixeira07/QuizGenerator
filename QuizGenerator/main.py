@@ -1,4 +1,4 @@
-from QuizGenerator.file import File
+from QuizGenerator.file.file import File
 from QuizGenerator.generator.generator import Generator
 from QuizGenerator.model.question import Question
 
