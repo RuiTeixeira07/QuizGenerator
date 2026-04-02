@@ -1,4 +1,5 @@
 from xml.etree import ElementTree as ET
+from QuizGenerator.generator.format.format import Format
 from QuizGenerator.model.question import Question
 from QuizGenerator.model.type import Type, MULTIPLE_CHOICE, TRUE_OR_FALSE
 
@@ -56,7 +57,7 @@ class Generator:
         Generator.__create_element_containing_text_element(
             question_element,
             question_text_tag,
-            Question.format_text(question.text))
+            Format.format_text(question.text))
 
         ET.SubElement(question_element, shuffle_answers_tag).text = shuffle_answers_active_tag
 

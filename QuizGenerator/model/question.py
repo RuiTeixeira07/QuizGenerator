@@ -3,10 +3,6 @@ from QuizGenerator.model.answer import Answer
 from QuizGenerator.model.difficulty import Difficulty, EMPTY as DIFFICULTY_EMPTY
 from QuizGenerator.model.type import Type, EMPTY as TYPE_EMPTY
 
-paragraph_placeholder = " ... "
-open_paragraph_tag = "<p>"
-close_paragraph_tag = "</p>"
-
 id_tag = "ID"
 difficulty_tag = "Difficulty"
 text_tag = "Question"
@@ -59,14 +55,3 @@ class Question:
     @staticmethod
     def __get_from_tag(question_data: dict[str, str], tag: str) -> str:
         return question_data[tag] if tag in question_data else None
-
-    @staticmethod
-    def format_text(text: str) -> str:
-        formatted_text_list = text.split(paragraph_placeholder)
-
-        formatted_text = formatted_text_list[0]
-
-        for paragraph in formatted_text_list[1:]:
-            formatted_text += open_paragraph_tag + paragraph + close_paragraph_tag
-
-        return formatted_text
