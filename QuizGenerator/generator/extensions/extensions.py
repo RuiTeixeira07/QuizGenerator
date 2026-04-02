@@ -42,26 +42,16 @@ class GeneratorExtensions:
 
     @staticmethod
     def create_type_specific_question_tags(question_element: ET.Element[str], question: Question) -> None:
+        """
+        Create type-specific question tags.
+        Correct answer is specified first.
+
+        :param ET.Element[str] question_element: The question element.
+        :param Question question: The question object.
+        """
+
         GeneratorExtensions.__create_correct_answer_tags(question_element, question)
         GeneratorExtensions.__create_wrong_answer_tags(question_element, question)
-
-    @staticmethod
-    def __create_correct_answer_tags(question_element: ET.Element[str], question: Question) -> None:
-        for correct_answer in question.correct_answers:
-            match question.type.value:
-                case MULTIPLE_CHOICE.value:
-                    GeneratorExtensions.create_element_containing_text_element(
-                        question_element,
-                        answer_tag,
-                        correct_answer.value,
-                        correct_answer_fraction)
-
-                case TRUE_OR_FALSE.value:
-                    GeneratorExtensions.create_element_containing_text_element(
-                        question_element,
-                        answer_tag,
-                        correct_answer.value.lower(),
-                        correct_answer_fraction)
 
     @staticmethod
     def __create_wrong_answer_tags(question_element: ET.Element[str], question: Question) -> None:
@@ -80,3 +70,21 @@ class GeneratorExtensions:
                          answer_tag,
                          wrong_answer.value.lower(),
                          wrong_true_or_false_answer_fraction)
+
+    @staticmethod
+    def __create_correct_answer_tags(question_element: ET.Element[str], question: Question) -> None:
+        for correct_answer in question.correct_answers:
+            match question.type.value:
+                case MULTIPLE_CHOICE.value:
+                    GeneratorExtensions.create_element_containing_text_element(
+                        question_element,
+                        answer_tag,
+                        correct_answer.value,
+                        correct_answer_fraction)
+
+                case TRUE_OR_FALSE.value:
+                    GeneratorExtensions.create_element_containing_text_element(
+                        question_element,
+                        answer_tag,
+                        correct_answer.value.lower(),
+                        correct_answer_fraction)
