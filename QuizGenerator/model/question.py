@@ -20,7 +20,7 @@ class Question:
     correct_answers: list[Answer]
 
     @classmethod
-    def create_questions(cls, questions_data: list[dict[str, str]]) -> list[Question]:
+    def create_questions(cls: Question, questions_data: list[dict[str, str]]) -> list[Question]:
         questions = []
 
         for question_data in questions_data:
@@ -34,16 +34,7 @@ class Question:
         return questions
 
     @classmethod
-    def __question_is_valid(cls, question: Question) -> bool:
-        return (question.id is not None
-                and question.difficulty != DIFFICULTY_EMPTY
-                and question.text is not None
-                and question.type != TYPE_EMPTY
-                and question.wrong_answers and len(question.wrong_answers) >= 1
-                and question.correct_answers and len(question.correct_answers) >= 1)
-
-    @classmethod
-    def __create_question_from_dictionary(cls, question_data: dict[str, str]) -> Question:
+    def __create_question_from_dictionary(cls: Question, question_data: dict[str, str]) -> Question:
         return Question(
             cls.__get_from_tag(question_data, id_tag),
             Difficulty.create_difficulty_from(cls.__get_from_tag(question_data, difficulty_tag)),
@@ -51,6 +42,15 @@ class Question:
             Type.create_type_from(cls.__get_from_tag(question_data, type_tag)),
             Answer.create_answers(cls.__get_from_tag(question_data, wrong_answers_tag)),
             Answer.create_answers(cls.__get_from_tag(question_data, correct_answers_tag)))
+
+    @staticmethod
+    def __question_is_valid(question: Question) -> bool:
+        return (question.id is not None
+                and question.difficulty != DIFFICULTY_EMPTY
+                and question.text is not None
+                and question.type != TYPE_EMPTY
+                and question.wrong_answers and len(question.wrong_answers) >= 1
+                and question.correct_answers and len(question.correct_answers) >= 1)
 
     @staticmethod
     def __get_from_tag(question_data: dict[str, str], tag: str) -> str:
