@@ -14,6 +14,8 @@ root_tag = "quiz"
 difficulty_tag = "category"
 question_tag = "question"
 
+course_path_prefix = "$course$/"
+
 class Generator:
     def __init__(self: Generator, quiz_path: str):
         self.quiz_path = quiz_path
@@ -54,7 +56,7 @@ class Generator:
         GeneratorExtensions.create_element_containing_text_element(
             question_element,
             difficulty_tag,
-            f"$course$/{difficulty.value}")
+            f"{course_path_prefix}{difficulty.value}")
 
     @staticmethod
     def __create_question_tag(root: ET.Element[str], question: Question) -> None:
