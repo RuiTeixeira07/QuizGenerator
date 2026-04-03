@@ -1,6 +1,7 @@
 import csv
+import os
 
-file_extension = ".csv"
+file_extension = ".CSV"
 file_delimiter = ';'
 read_mode = "r"
 
@@ -9,16 +10,12 @@ class File:
         self.file_path = file_path
 
     def read_file(self: File) -> list[dict[str, str]]:
-        try:
-            if not self.file_path.endswith(file_extension):
-                print("Required Comma-separated Values.")
-                print("Invalid File: {}".format(self.file_path))
-                return []
+        if not self.file_path.upper().endswith(file_extension.upper()):
+            raise ValueError("Invalid File: '{}'. Required Comma-separated Values.".format(self.file_path))
 
-            with open(self.file_path, read_mode) as file:
-                reader = csv.DictReader(file, delimiter=file_delimiter)
-                return list(reader)
+        if not os.path.isfile(self.file_path):
+            raise FileNotFoundError("File Not Found: '{}'.".format(self.file_path))
 
-        except FileNotFoundError:
-            print("File Not Found: {}".format(self.file_path))
-            return []
+        with open(self.file_path, read_mode) as file:
+            reader = csv.DictReader(file, delimiter=file_delimiter)
+            return list(reader)

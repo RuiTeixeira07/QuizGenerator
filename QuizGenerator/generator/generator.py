@@ -7,6 +7,7 @@ from QuizGenerator.model.difficulty import Difficulty
 from QuizGenerator.model.question import Question
 from QuizGenerator.model.type import Type
 
+file_extension = ".XML"
 write_bytes_mode = "wb"
 default_encoding = "utf-8"
 
@@ -66,5 +67,8 @@ class Generator:
         GeneratorExtensions.create_type_specific_question_tags(question_element, question)
 
     def __write_file(self: Generator, root: ET.Element[str]) -> None:
+        if not self.quiz_path.upper().endswith(file_extension.upper()):
+            raise ValueError("Invalid File: '{}'. Required XML.".format(self.quiz_path))
+
         with open(self.quiz_path, write_bytes_mode) as file:
             file.write(ET.tostring(root, encoding=default_encoding, xml_declaration=True))
