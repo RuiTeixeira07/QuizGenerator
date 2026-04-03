@@ -2,8 +2,9 @@ from QuizGenerator.file.file import File
 from QuizGenerator.generator.generator import Generator
 from QuizGenerator.model.question import Question
 
-questions_data_path = 'assets/QuestionsData.csv'
-generated_quiz_path = 'quiz/Quiz.xml'
+questions_data_path = "assets/QuestionsData.csv"
+generated_quiz_path = "quiz/Quiz.xml"
+
 class Main:
     @staticmethod
     def run() -> None:
