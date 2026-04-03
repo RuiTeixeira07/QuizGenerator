@@ -27,7 +27,7 @@ class Question:
             question = Question.__create_question_from_dictionary(question_data)
 
             if not Question.__question_is_valid(question):
-                print(f"Required fields: {id_tag}, {difficulty_tag}, {text_tag}, {type_tag}, {wrong_answers_tag}, {correct_answers_tag}.")
+                print(f"Required Fields: {id_tag}, {difficulty_tag}, {text_tag}, {type_tag}, {wrong_answers_tag}, {correct_answers_tag}.")
                 print("Invalid Question: {}".format(question))
                 continue
 

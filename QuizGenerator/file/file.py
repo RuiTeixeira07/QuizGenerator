@@ -1,5 +1,6 @@
 import csv
 
+file_extension = ".csv"
 file_delimiter = ';'
 read_mode = "r"
 
@@ -9,6 +10,11 @@ class File:
 
     def read_file(self: File) -> list[dict[str, str]]:
         try:
+            if not self.file_path.endswith(file_extension):
+                print("Required Comma-separated Values.")
+                print("Invalid File: {}".format(self.file_path))
+                return []
+
             with open(self.file_path, read_mode) as file:
                 reader = csv.DictReader(file, delimiter=file_delimiter)
                 return list(reader)
