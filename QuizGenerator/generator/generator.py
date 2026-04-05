@@ -1,3 +1,4 @@
+import os.path
 from QuizGenerator.model.difficulty import ALL as DIFFICULTY_ALL
 from collections import defaultdict
 from xml.etree import ElementTree as ET
@@ -69,6 +70,10 @@ class Generator:
     def __write_file(self: Generator, root: ET.Element[str]) -> None:
         if not self.quiz_path.casefold().endswith(file_extension.casefold()):
             raise ValueError("Invalid File: '{}'. Required XML.".format(self.quiz_path))
+
+        if not os.path.exists(self.quiz_path):
+            directory_path = os.path.dirname(os.path.abspath(self.quiz_path))
+            os.makedirs(directory_path)
 
         with open(self.quiz_path, write_bytes_mode) as file:
             file.write(ET.tostring(root, encoding=default_encoding, xml_declaration=True))
