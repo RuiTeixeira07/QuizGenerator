@@ -6,8 +6,8 @@ from QuizGenerator.model.question import Question
 questions_data_path_extension = ".CSV"
 generated_quiz_path_extension = ".XML"
 
-questions_data_path = f"assets/QuestionsData{questions_data_path_extension.upper()}"
-generated_quiz_path = f"quiz/Quiz{generated_quiz_path_extension.upper()}"
+questions_data_path = f"assets/QuestionsData{questions_data_path_extension}"
+generated_quiz_path = f"quiz/Quiz{generated_quiz_path_extension}"
 
 class Main:
     @staticmethod

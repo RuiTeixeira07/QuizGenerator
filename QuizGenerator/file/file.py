@@ -10,7 +10,7 @@ class File:
         self.file_path = file_path
 
     def read_file(self: File) -> list[dict[str, str]]:
-        if not self.file_path.upper().endswith(file_extension.upper()):
+        if not self.file_path.casefold().endswith(file_extension.casefold()):
             raise ValueError("Invalid File: '{}'. Required Comma-separated Values.".format(self.file_path))
 
         if not os.path.isfile(self.file_path):

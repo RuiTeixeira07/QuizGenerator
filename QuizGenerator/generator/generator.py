@@ -67,7 +67,7 @@ class Generator:
         GeneratorExtensions.create_type_specific_question_tags(question_element, question)
 
     def __write_file(self: Generator, root: ET.Element[str]) -> None:
-        if not self.quiz_path.upper().endswith(file_extension.upper()):
+        if not self.quiz_path.casefold().endswith(file_extension.casefold()):
             raise ValueError("Invalid File: '{}'. Required XML.".format(self.quiz_path))
 
         with open(self.quiz_path, write_bytes_mode) as file:
